@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @application.fname %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @application.lname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @application.gender %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @application.email %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @application.contact %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @application.address %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @application.education %>
+</p>
+
+<p>
+  <strong>Attached C.V</strong>
+  <%= link_to 'Click to download', @application.cv.url %>
+</p>
+
+<%= link_to 'Home', root_path, class:"btn btn-primary" %>

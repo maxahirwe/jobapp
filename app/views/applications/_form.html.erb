@@ -1,0 +1,59 @@
+<div class="form-group">
+<%= form_with(model: application, local: true, :html => {:multipart => true}) do |form| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</b>
+
+      <ul>
+        <% application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <h6> Profile </h6>
+  <div class="field">
+    First Name
+    <%= form.text_field :fname, class: 'form-control'  %>
+  </div>
+
+  <div class="field">
+    Last Name
+    <%= form.text_field :lname, size:40, class: 'form-control'  %>
+  </div>
+
+  <div class="field">
+    Gender
+    <%= form.select :gender, options_for_select(%w[Male Female]),{}, {class: 'form-control'} %>
+  </div>
+
+  <div class="field">
+    Email
+    <%= form.text_field :email, size:40, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    Contact
+    <%= form.text_field :contact, size:40, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    Address
+    <%= form.text_field :address, size:40, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    Education Level
+    <%= form.select :education, options_for_select(%w[Bachelors Masters Phd Other]), {} , {class: 'form-control'} %>
+  </div>
+  <br>
+  <div class="field">
+    <b> Attach C.V </b>
+    <%= form.file_field :cv %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit 'Apply', class:"btn btn-primary"%>
+  </div>
+<% end %>
+</div>
